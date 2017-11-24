@@ -1,0 +1,38 @@
+#!/bin/bash
+
+cd /home/HELGA/Desktop/RATA
+ls -d */ > out.txt
+x=$(wc -l < out.txt)
+y=0
+cat out.txt | while read line; do
+    while [  $y -lt $x ]; do
+	y=$(( y+1 ))
+	echo $line
+    done
+done
+
+
+    want=5
+cat lines | while read line; do
+  x=$(( x+1 ))
+  if [ $x -eq "$want" ]; then
+    echo $line
+    break
+  fi
+done
+
+#!/bin/bash
+        for i in `seq 1 10`;
+        do
+                echo $i
+        done    
+        
+7.3 While sample
+
+          #!/bin/bash 
+         COUNTER=0
+         while [  $COUNTER -lt 10 ]; do
+             echo The counter is $COUNTER
+             let COUNTER=COUNTER+1 
+         done
+         

@@ -1,0 +1,56 @@
+# !/bin/bash
+set -e
+
+#root folder
+dir="/home/HELGA/Desktop/retina";
+
+#path to spike detection python code
+detection="/home/HELGA/Desktop/stuff/herding-spikes/interpolatingDetection/run_detection.py";
+
+#path to localization python code
+localization="/home/HELGA/Desktop/stuff/herding-spikes/postProcessing/run_localisation.py";
+
+#path to clustering python code
+clustering="/home/HELGA/Desktop/stuff/herding-spikes/clustering/run_clustering.py"
+
+cd $dir
+
+# list of folders inside root folder
+ls -d */ > out.txt
+x=$(wc -l < out.txt) #number of folders detected
+
+for i in $(seq 1 1 $x)
+do
+    A=$(head -$i $line out.txt | tail -1); #folder (290116/)
+    A1=$dir"/"$A;  #/home/HELGA/Desktop/RATA/290116/
+    cd $A1
+    # list of brw files inside specific folder A
+    ls *brw > out1.txt
+    # number of brw files detected
+    x1=$(wc -l < out1.txt)
+    
+    for i1 in $(seq 1 1 $x1)
+    do
+	B=$(head -$i1 $line1 out1.txt | tail -1); #brw's (01TMA290116.brw)
+	B1="${B//.brw}"; #without .brw (01TMA290116)
+	B2=$A1$B1; #subfolder to create
+	mkdir -m 777 $B2; #create subfolder
+	mv $B $B2; #relocate the brw file
+	#new path to brw of interest
+	file1=$B2/$B;
+	# run detection
+	python $detection $file1;
+	# run localization
+	python $localization $file1;
+	# new output-file name
+	file2=$B2/$B1"_v28.hdf5";
+	# run clustering
+	python $clustering $file2;
+	
+	cd $dir #return to the root directory
+    done    
+done
+
+
+
+

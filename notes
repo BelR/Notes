@@ -1,0 +1,24 @@
+
+code:
+
+active channel detection
+       - review of the voltage variation parameters usied to separate interest channels from noisy or satured ones
+
+spike detection
+      - review the necesity of filtering the signal
+      - the establishment of umbral for signal detection
+      - cutting, storageing the spikes
+spike clustering
+      - mathematical base for supraparamagnetic clustering
+
+
+
+
+
+
+
+&&&&&&&&&&&&&&&
+echo PATH=$PATH:/user/local/go/bin
+alias qutebrowser
+ /usr/local/go/bin/go build
+

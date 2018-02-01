@@ -1,7 +1,0 @@
-GNU_compiler.png
-awesome_keys.png
-lines
-out.txt
-python_update.png
-qute_installer.png
-specifics.txt

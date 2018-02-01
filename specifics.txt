@@ -1,6 +1,6 @@
 chmod -R 777 *
 changes the permission of all present files and directories and their existent subfolders
-
+https://git.gnome.org/browse/libsecret/
 
 path-to-qutebrowser/.venv/bin/python3 -m qutebrowser "$@"
 /home/isabel/Documents/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"

@@ -1,5 +1,4 @@
 chmod -R 777 *
-changes the permission of all present files and directories and their existent subfolders
 https://git.gnome.org/browse/libsecret/
 
 path-to-qutebrowser/.venv/bin/python3 -m qutebrowser "$@"
@@ -9,18 +8,12 @@ to add a ip for NASTY message from ssh protocol
 ssh-keygen -R 192.168.3.10
 git@github.git@github.com:albertpuente/herding-spikes.git
 192.30.253.113 = github.com
-for the spike- detection code:
 git clone -b detection-cpp https://github.com/martinosorb/herding-spikes.git
-
-for the spike- detection code:
-git clone -b detection-cpp https://github.com/martinosorb/herding-spikes.git
-to add a new user ubuntu style
 sudo useradd -m HELGA
 sudo passwd HELGA
 sudo useradd -m -s /bin/bash HELGA
 sudo usermod -s /bin/bash HELGA
 
-to add the user of interest to allow root privileges
 edit:
 /etc/sudoers
 or edit /etc/group
@@ -39,12 +32,4 @@ ubuntu:dpkg --list | grep compiler
 sudo apt-get install binutils build-essential m4 autogen bison flex
 sudo apt-get install g++
 
- systemctl reboot -i
- for rebooting ignoring logged users
-
-ssh -X 
-
-tar gz
-tar -zxvf
-tar bz2
-tar -jxvf
+systemctl reboot -i
